@@ -17,10 +17,10 @@ function safe(correctCode) {
   let words = document.getElementById("message")
 
   if (correctCode) {
-    display.src = "openedSafe.jpg";
+    display.src = "OpenedSafe.jpg";
     words.innerHTML = "You Win!"
   } else {
-    display.src = "closedSafe.jpg"
+    display.src = "ClosedSafe.jpg"
     words.innerHTML = ""
   }
 }
