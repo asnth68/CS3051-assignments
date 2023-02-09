@@ -2,7 +2,9 @@ let code = "1379*"
 let input = "";
 
 function enter(value) {
+
   input += value;
+
   for (let i = 0; i < input.length; i++) {
     if (input[i] != code[i]) {
       input = "";
