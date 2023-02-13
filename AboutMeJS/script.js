@@ -1,5 +1,5 @@
-const myStyles =
-  `h1 {
+const myStyles =`
+  h1 {
     color: white;
   }
   h2 {
@@ -41,7 +41,8 @@ const myStyles =
   td, th {
     text-align: left;
     color: white;
-  }`;
+  }
+  `;
 const styleElement = document.createElement("style");
 styleElement.innerHTML = myStyles;
 document.head.appendChild(styleElement);
