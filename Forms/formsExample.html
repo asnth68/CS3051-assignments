@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+  <p>What would you like to enter?</p>
+
+  <input type="radio" id="us-phone" name="input-type" value="us-phone">
+  <label for="us-phone">US Phone number</label>
+  <br>
+  <input type="radio" id="fr-phone" name="input-type" value="fr-phone">
+  <label for="fr-phone">FR Phone number</label>
+  <br>
+  <input type="radio" id="us-ssn" name="input-type" value="us-ssn">
+  <label for="us-ssn">US SS number</label>
+  <br>
+  <label for="numbers">Phone Number or SSN:</label>
+  <br>
+  <input type="text" id="numbers" name="numbers">
+  <br>
+  <button type="submit" onclick="verifyInput()">Submit</button>
+
+
+<script>
+  function verifyInput() {
+    let inputType = document.querySelector('input[name="input-type"]:checked').value;
+    let enteredNumbers = document.getElementById("numbers").value;
+
+    switch (inputType) {
+      case "us-phone":
+        let us_format = /^\(\d{3}\) \d{3}-\d{4}$/;
+        if (us_format === enteredNumbers) {
+          alert("US Phone number is valid: " + enteredNumbers);
+        } else {
+          alert("Invalid US Phone number: " + enteredNumbers + "\nPlease enter US number in (XXX) XXX-XXXX format");
+        }
+        break;
+      case "fr-phone":
+        let fr_phone = /^(\d{2}\.){3}\d{2}$/;
+        if (fr_phone === enteredNumbers) {
+          alert("FR Phone number is valid: " + enteredNumbers);
+        } else {
+          alert("Invalid FR Phone number: " + enteredNumbers + "\nPlease enter FR number in XX.XX.XX.XX format");
+        }
+        break;
+      case "us-ssn":
+        let ssn_format = /^\d{3}-\d{2}-\d{4}$/;
+        if (ssn_format === enteredNumbers) {
+          alert("US SS number is valid: " + enteredNumbers);
+        } else {
+          alert("Invalid US SS number: " + enteredNumbers + "\nPlease enter FR number in XXX-XX-XXXX format");
+        }
+        break;
+    }
+  }
+</script>
+</body>
+
+</html>
