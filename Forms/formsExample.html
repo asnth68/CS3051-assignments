@@ -33,23 +33,23 @@
     switch (inputType) {
       case "us-phone":
         let us_format = /^\(\d{3}\) \d{3}-\d{4}$/;
-        if (us_format === enteredNumbers) {
+        if (us_format.test(enteredNumbers)) {
           alert("US Phone number is valid: " + enteredNumbers);
         } else {
           alert("Invalid US Phone number: " + enteredNumbers + "\nPlease enter US number in (XXX) XXX-XXXX format");
         }
         break;
       case "fr-phone":
-        let fr_phone = /^(\d{2}\.){3}\d{2}$/;
-        if (fr_phone === enteredNumbers) {
+        let fr_phone = /^(\d{2}\.){4}\d{2}$/;
+        if (fr_phone.test(enteredNumbers)) {
           alert("FR Phone number is valid: " + enteredNumbers);
         } else {
-          alert("Invalid FR Phone number: " + enteredNumbers + "\nPlease enter FR number in XX.XX.XX.XX format");
+          alert("Invalid FR Phone number: " + enteredNumbers + "\nPlease enter FR number in XX.XX.XX.XX.XX format");
         }
         break;
       case "us-ssn":
         let ssn_format = /^\d{3}-\d{2}-\d{4}$/;
-        if (ssn_format === enteredNumbers) {
+        if (ssn_format.test(enteredNumbers)) {
           alert("US SS number is valid: " + enteredNumbers);
         } else {
           alert("Invalid US SS number: " + enteredNumbers + "\nPlease enter FR number in XXX-XX-XXXX format");
