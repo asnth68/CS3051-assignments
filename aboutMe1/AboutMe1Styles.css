@@ -1,0 +1,33 @@
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+h3 {
+  color: white;
+}
+p {
+  color: white;
+}
+body {
+  background-color: darkslategray;
+}
+a:link {
+  color: yellow; background-color: transparent; text-decoration: none;
+}
+a:visited {
+  color: rgb(255, 0, 0); background-color: transparent; text-decoration: none;
+}
+a:hover {
+  color: #90ee90; background-color: transparent; text-decoration: none;
+}
+a:active {
+  color: hsl(350, 100%, 88%); background-color: transparent; text-decoration: none;
+}
+table {
+  width: 50%; background-color: darkblue;
+}
+td, th {
+  text-align: left; color: white
+}
