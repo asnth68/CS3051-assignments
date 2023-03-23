@@ -1,0 +1,79 @@
+#container {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas:
+      "g-header g-header g-header"
+      "g-left g-content g-right"
+      "g-left g-footer g-right";
+  justify-items: center;
+  align-items: center;
+  border: black solid 1px;
+  resize: both;
+  overflow: auto;
+  column-gap: 10px;
+  row-gap: 10px;
+  font-size: 20px;
+}
+#header {
+  grid-area: g-header;
+  text-align: center;
+  background-color: darkblue;
+  place-self: stretch;
+}
+
+#left {
+  grid-area: g-left;
+  place-self: start;
+}
+
+#content {
+  grid-area: g-content;
+}
+
+#footer {
+  grid-area: g-footer;
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  place-self: stretch;
+  background-color: gray;
+  text-align: end;
+}
+
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+h3 {
+  color: white;
+}
+p {
+  color: white;
+}
+body {
+  background-color: darkslategray;
+}
+a:link {
+  color: yellow; background-color: transparent; text-decoration: none;
+}
+a:visited {
+  color: darkgoldenrod; background-color: transparent; text-decoration: none;
+}
+a:hover {
+  color: #90ee90; background-color: transparent; text-decoration: none;
+}
+a:active {
+  color: hsl(350, 100%, 88%); background-color: transparent; text-decoration: none;
+}
+table {
+  width: 200%;
+}
+td, th {
+  text-align: left; color: white
+}
+.active {
+  color: pink;
+  font-size: 25px;
+}
