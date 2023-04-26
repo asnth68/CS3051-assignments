@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About Me Grid</title>
+  <link rel="styleSheet" href="gridStylesExpress.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header"><h1>Alden Sneath</h1></div>
+        <div id="content">
+            <div>
+                <h3>From Oakland, California</h3>
+                <img src="snowboarding.jpg" width="1000" height="500" alt="snowboarding view">
+            </div>
+        </div>
+        <div id="footer">Copyright &copy; Alden Sneath 2023</div>
+        <div id="left">
+          <ul>
+            <li><button id='b2' onclick="pressedInterests()">Personal Interests</button>
+            <li><button id='b3' onclick="pressedSites()">Favorite Sites</button>
+            <li><button id='b4' onclick="pressedCourses()">My Courses</button>
+          </ul>
+          <div id='response'></div>
+        </div>
+    </div>
+
+  <script>
+    function pressedInterests(event) {
+      fetch("/interests")
+        .then(function (response) { return response.text(); })
+        .then(function (data) {
+          document.querySelector('#response').innerHTML = data;
+        });
+    }
+    function pressedSites(event) {
+      fetch("/websites")
+        .then(function (response) { return response.text(); })
+        .then(function (data) {
+          document.querySelector('#response').innerHTML = data;
+        });
+    }
+    function pressedCourses(event) {
+      fetch("/courses")
+        .then(function (response) { return response.text(); })
+        .then(function (data) {
+          document.querySelector('#response').innerHTML = data;
+        });
+    }
+  </script>
+</body>
+</html>

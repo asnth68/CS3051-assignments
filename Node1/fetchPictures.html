@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random funny images</title>
+</head>
+
+<body>
+  <button id="generate-btn" onclick="pressed()">Generate Random Image</button>
+  <br>
+  <br>
+  <img id="random-img" src="" width="600" height="500" alt="Random Image">
+
+  <script>
+    function pressed(e) {
+      fetch("/random-image")
+                .then(function (response) { return response.text(); })
+                .then(function (data) {
+                  document.querySelector('#random-img').src = data;
+                });
+  }
+  </script>
+</body>
+
+</html>

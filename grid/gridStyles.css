@@ -1,3 +1,4 @@
+/* grid layout */
 #container {
   display: grid;
   grid-template-columns: 200px auto;
@@ -21,16 +22,13 @@
   background-color: darkblue;
   place-self: stretch;
 }
-
 #left {
   grid-area: g-left;
   place-self: start;
 }
-
 #content {
   grid-area: g-content;
 }
-
 #footer {
   grid-area: g-footer;
   grid-column: 1 / 4;
@@ -39,7 +37,7 @@
   background-color: gray;
   text-align: end;
 }
-
+/* page styles */
 h1 {
   color: white;
 }
@@ -54,7 +52,7 @@ p {
 }
 body {
   background-color: darkslategray;
-}
+} 
 a:link {
   color: yellow; background-color: transparent; text-decoration: none;
 }

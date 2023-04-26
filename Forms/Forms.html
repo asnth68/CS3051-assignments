@@ -1,0 +1,110 @@
+<!-- Code
+Input box to enter a phone number or a code
+Submit button
+Radio buttons to indicate what to enter
+US Phone number (xxx) xxx-xxxx
+FR Phone number xx.xx.xx.xx
+US SS number xxx-xx-xxxx
+Verify it is correct on Submit
+Extra credit:
+Use keyboard events to format the input as the number is typed
+Allow user to hit <Enter> to submit -->
+
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>FORMS</title>
+<link href="style.css" rel="stylesheet">
+  </head>
+
+<body>
+<form>
+<label for="input-type">What would you like to enter?</label>
+<br>
+<input type="radio" id="us-phone" name="input-type" value="us-phone">
+<label for="us-phone">US Phone number</label>
+<br>
+<input type="radio" id="fr-phone" name="input-type" value="fr-phone">
+<label for="fr-phone">FR Phone number</label>
+<br>
+<input type="radio" id="us-ssn" name="input-type" value="us-ssn">
+<label for="us-ssn">US SS number</label>
+<br>
+<label for="phone-number">Phone Number or Code:</label>
+<br>
+<input type="text" id="phone-number" name="phone-number" onkeyup="formatInput()" onkeydown="submitOnEnter(event)">
+<br>
+<button type="submit" onclick="verifyInput()">Submit</button>
+</form>
+<script>
+
+
+function formatInput() {
+  var input = document.getElementById("phone-number");
+  var inputType = document.querySelector('input[name="input-type"]:checked').value;
+
+  if (inputType === "us-phone") {
+    var formattedInput = formatUSPhoneNumber(input.value);
+    input.value = formattedInput;
+  } else if (inputType === "fr-phone") {
+    var formattedInput = formatFRPhoneNumber(input.value);
+    input.value = formattedInput;
+  } else if (inputType === "us-ssn") {
+    var formattedInput = formatUSSSN(input.value);
+    input.value = formattedInput;
+  }
+}
+
+function formatUSPhoneNumber(input) {
+  input = input.replace(/\D/g, '');
+  var formattedInput = input.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+  return formattedInput;
+}
+
+function formatFRPhoneNumber(input) {
+  input = input.replace(/\D/g, '');
+  var formattedInput = input.replace(/(\d{2})(\d{2})(\d{2})(\d{2})/, '$1.$2.$3.$4');
+  return formattedInput;
+}
+
+function formatUSSSN(input) {
+  input = input.replace(/\D/g, '');
+  var formattedInput = input.replace(/(\d{3})(\d{2})(\d{4})/, '$1-$2-$3');
+  return formattedInput;
+}
+
+function verifyInput() {
+  var input = document.getElementById("phone-number");
+  var inputType = document.querySelector('input[name="input-type"]:checked').value;
+  var pattern;
+
+  if (inputType === "us-phone") {
+    pattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+  } else if (inputType === "fr-phone") {
+    pattern = /^\d{2}\.\d{2}\.\d{2}\.\d{2}$/;
+  } else if (inputType === "us-ssn") {
+    pattern = /^\d{3}-\d{2}-\d{4}$/;
+  }
+
+  if (input.value.match(pattern)) {
+    alert("Input is correct!");
+  } else {
+    alert("Input is incorrect. Please try again.");
+  }
+}
+
+function submitOnEnter(event) {
+  if (event.key === "Enter") {
+    verifyInput();
+  }
+}
+</script>
+
+  <!-- <script src="script.js" async defer></script>  -->
+
+</body>
+
+</html>

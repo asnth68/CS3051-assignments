@@ -1,4 +1,4 @@
-let code = "1379*"
+let code = "1379*";
 let input = "";
 
 function enter(value) {
