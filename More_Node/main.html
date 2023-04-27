@@ -27,6 +27,7 @@
               document.querySelector('#result').innerHTML = data;
             });
         }
+
         function pressedNext(event) {
           fetch("/next")
             .then(function (response) { return response.text(); })
