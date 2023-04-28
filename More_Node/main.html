@@ -24,15 +24,15 @@
           fetch("/previous")
             .then(response => response.json())
             .then(function (data) {
-              document.querySelector('#result').innerHTML = data;
+              document.querySelector('#result').innerHTML = data.join(", ");
             });
         }
 
         function pressedNext(event) {
           fetch("/next")
-            .then(function (response) { return response.text(); })
+            .then(response => response.json())
             .then(function (data) {
-              document.querySelector('#result').innerHTML = data;
+              document.querySelector('#result').innerHTML = data.join(", ");
             });
         }
     </script>
