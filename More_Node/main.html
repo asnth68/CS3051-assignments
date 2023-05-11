@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width">
     <title>List 5-letter words</title>
     <style>
+      body {
+        background-color: grey;
+      }
     </style>
-
 </head>
 
 <body>
@@ -17,6 +19,77 @@
     <button id="next" onclick="pressedNext()">Next 20 words</button>
     <br><br>
     <!-- put a div here to show the result -->
+    <div id="result"></div>
+
+    <script>
+        function pressedPrevious(event) {
+          fetch("/previous")
+            .then(response => response.json())
+            .then(function (data) {
+              document.querySelector('#result').innerHTML = data.join(", ");
+            });
+        }
+
+        `function pressedPrevious(event) {
+          fetch("/previous")
+          .then(function (response) { return response.text(); })
+          .then(function (data) {
+              document.querySelector('#result').innerHTML = data;
+            });
+        }`
+
+        function pressedNext(event) {
+          fetch("/next")
+          .then(response => response.json())
+          .then(function (data) {
+              document.querySelector('#result').innerHTML = data.join(", ");
+            });
+        }
+
+        `function pressedNext(event) {
+          fetch("/next")
+          .then(function (response) { return response.text(); })
+          .then(function (data) {
+              document.querySelector('#result').innerHTML = data;
+            });
+        }`
+
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>List 5-letter words</title>
+    <style>
+      body {
+        background-color: grey;
+      }
+    </style>
+</head>
+
+<body>
+    put previous and next buttons here
+    <h2>List of 5-letter french words</h2>
+    <h3>Which language do you want?</h3>
+    <button id="bt-fr" onclick="pressedEn()"><img src="frenchFlag.jpg" width="50" height="40" alt="french flag"></button>
+    <button id="bt-en" onclick="pressedEn()"><img src="britishFlag.jpg" width="50" height="40" alt="english flag"></button>
+    <button id="bt-es" onclick="pressedEs()"><img src="spanishFlag.jpg" width="50" height="40" alt="spanish flag"></button>
+    <br>
+    <h3>How many words do you want to be displayed?</h3>
+    maybe use form or input
+    <button id="bt-10" onclick="pressed10()">10 words</button>
+    <button id="bt-20" onclick="pressed20()">20 words</button>
+    <button id="bt-30" onclick="pressed30()">30 words</button>
+    <br>
+    <button id="previous" onclick="pressedPrevious()"></button>
+    <button id="next" onclick="pressedNext()"></button>
+    <br><br>
+    put a div here to show the result
     <div id="result"></div>
 
     <script>
