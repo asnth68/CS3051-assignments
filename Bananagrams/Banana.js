@@ -15,34 +15,7 @@
         // Letter Constants
 
         const LETTERS = [
-          { letter: 'A', count: 13, score: 1 },
-          { letter: 'B', count: 3, score: 3 },
-          { letter: 'C', count: 3, score: 3 },
-          { letter: 'D', count: 6, score: 2 },
-          { letter: 'E', count: 18, score: 1 },
-          { letter: 'F', count: 3, score: 4 },
-          { letter: 'G', count: 4, score: 2 },
-          { letter: 'H', count: 3, score: 4 },
-          { letter: 'I', count: 12, score: 1 },
-          { letter: 'J', count: 2, score: 8 },
-          { letter: 'K', count: 2, score: 5 },
-          { letter: 'L', count: 5, score: 1 },
-          { letter: 'M', count: 3, score: 3 },
-          { letter: 'N', count: 8, score: 1 },
-          { letter: 'O', count: 11, score: 1 },
-          { letter: 'P', count: 3, score: 3 },
-          { letter: 'Q', count: 2, score: 10 },
-          { letter: 'R', count: 9, score: 1 },
-          { letter: 'S', count: 6, score: 1 },
-          { letter: 'T', count: 9, score: 1 },
-          { letter: 'U', count: 6, score: 1 },
-          { letter: 'V', count: 3, score: 4 },
-          { letter: 'W', count: 3, score: 4 },
-          { letter: 'X', count: 2, score: 8 },
-          { letter: 'Y', count: 3, score: 3 },
-          { letter: 'Z', count: 2, score: 10 }
-
-          /*{ letter: 'A', count: 13},
+          { letter: 'A', count: 13},
           { letter: 'B', count: 3},
           { letter: 'C', count: 3},
           { letter: 'D', count: 6},
@@ -67,7 +40,7 @@
           { letter: 'W', count: 3},
           { letter: 'X', count: 2},
           { letter: 'Y', count: 3},
-          { letter: 'Z', count: 2}*/
+          { letter: 'Z', count: 2}
         ];
 
         // Game State
