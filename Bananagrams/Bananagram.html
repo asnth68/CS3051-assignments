@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bananagram</title>
+  <link rel="styleSheet" href="BananaStyles.css">
+</head>
+<body>
+  <button class="button" id="peel-button" onclick="pressedPeel()">Peel</button>
+  <button class="button" id="dump-button" onclick="pressedDump()">Dump</button>
+  <button class="button" id="undo-button" onclick="pressedUndo()">Undo</button>
+
+  <div class="hand"></div>
+  <div class="board"></div>
+  <script src="Banana.js">
+    `
+    function pressedPeel(event) {
+      fetch("/previous")
+        .then(response => response.json())
+        .then(function (data) {
+          document.querySelector('#result').innerHTML = data.join(", ");
+        });
+    }
+
+    function pressedDump(event) {
+      fetch("/previous")
+      .then(function (response) { return response.text(); })
+      .then(function (data) {
+          document.querySelector('#result').innerHTML = data;
+        });
+    }
+
+    function pressedUndo(event) {
+      fetch("/next")
+      .then(response => response.json())
+      .then(function (data) {
+          document.querySelector('#result').innerHTML = data.join(", ");
+        });
+    }
+
+    function pressedNext(event) {
+      fetch("/next")
+      .then(function (response) { return response.text(); })
+      .then(function (data) {
+          document.querySelector('#result').innerHTML = data;
+        });
+    }
+    `
+  </script>
+</body>
+</html>
+
