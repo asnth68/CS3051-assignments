@@ -31,7 +31,7 @@ body {
   width: 43px;
   font-size: 24px;
   cursor: pointer;
-  background-color: #FFDAB9;
+  background-color: orange;
   user-select: none;
 }
 .tile:hover {
@@ -50,16 +50,16 @@ body {
   cursor: pointer;
 }
 .button:hover {
-  background-color: #ADD8E6;
+  background-color: lightblue;
 }
 .hand {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  margin: 10px;
+  margin: 5px;
   background-color: tan;
 }
 .hand .tile {
-  margin: 10px;
+  margin: 5px;
 }

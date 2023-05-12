@@ -1,5 +1,3 @@
-
-
     // Add the cells to the board
     for (let y = 0; y < 15; y++) {
       for (let x = 0; x < 15; x++) {
@@ -89,7 +87,6 @@
 
           return tileElement;
         }
-
         // Handle the dragstart event for tiles
         function handleDragStart(event) {
           event.dataTransfer.setData('text/plain', event.target.textContent);
@@ -119,6 +116,11 @@
           const tileElement = createTileElement(tileLetter);
           cellElement.innerHTML = '';
           cellElement.appendChild(tileElement);
+
+          // boardTiles.push(tileLetter);
+          // let index = handTiles.indexOf(boardTiles[boardTiles.length - 1]);
+          // handTiles.splice(index, 1);
+          // renderHand();
         }
 
         // Generate a random tile from the bunch
@@ -160,6 +162,7 @@
 
         const undoButton = document.querySelector("#undo-button");
 
+        // Returns last tile played back into the hand
         undoButton.addEventListener("click", undoMove);
         function undoMove() {
           // Find the last tile played on the board
@@ -174,4 +177,5 @@
            hand.appendChild(lastTile);*/
           }
         }
+
 
